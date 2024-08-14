@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace BlazorDeepDive.Models
 {
@@ -11,7 +12,9 @@ namespace BlazorDeepDive.Models
         }
 
         public int Id { get; set; }
+        [Required]
         public string? Name { get; set; }
+        [Required]
         public string? City {  get; set; }
         public bool IsOnline { get; set; }
 
