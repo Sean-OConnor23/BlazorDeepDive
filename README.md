@@ -19,7 +19,7 @@ Notes Taken During Udemy Course:
       - To submit data back, must have a [SupplyParameterFromForm(FormName="")] attribute to link back in @code
       - Have a button of type="submit" somewhere within the form
       - To pass data not wanting to display in form, use hidden attribute
-          - Example: < InputNumber bind-Value="" hidden></InputNumber>
+          - Example: < InputNumber bind-Value="" hidden>< /InputNumber>
   - Form submission is different for SSR than a Blazor Web App with interactivity
   - ?? after variable means assignment if the variable is null. Will not do anything if it is not null
   - [Required] above any variable declares it as required in form
