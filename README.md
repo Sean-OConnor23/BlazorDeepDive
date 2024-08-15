@@ -34,6 +34,19 @@ Notes Taken During Udemy Course:
       - keeps us from having to instantiate objects and reduces unnecessary dependencies
       - simplifies life cyle of dependencies in components (using DI container)
       - DI container defined in Program.cs (builder.Services.AddRazorComponents())
-      - 
-
+  - When deleting and SSR, need to use an HTTPS POST functionality such as <EditForm>
+      - Don't use <a> because the history will be stored in the browser
+  - Stream Rendering allows for the view to be rendered and partial of it to be rendered later
+      - Have to use @attribute [StreamRendering] at top of Routable Component file
+      - Reference weather.razor in example code
+      - The to be loaded aspect must not be static
+- Section 3: Server Interactivity
+  - User --> DOM (document object model) --> JS (blazor.web.js) --> Web Server and then reverse back to user patching what needs to be updated on browser
+  - Enhanced Navigation is enabled in Blazor Web App by default
+      - via blazor.web.js
+      - first step toward interactivity
+  - When an application as able to partially render, we can consider that interactive
+  - Enhanced Form Handling
+      - To keep whole page from being refreshed when using <EditForm> we must enhance.
+      - Example: <EditForm Enhance="true">
   
