@@ -25,9 +25,9 @@ Notes Taken During Udemy Course:
   - [Required] above any variable declares it as required in form
       - Comes from System.ComponentModel.DataAnnotations
   - To validate data in the form there are a couple options (Use OnValidSubmit instead of OnSubmit)
-      - <DataAnnotationsValidator>
-      - <ValidationSummary>
-      - <ValidationMessage>
+      - < DataAnnotationsValidator>
+      - < ValidationSummary>
+      - < ValidationMessage>
         - Use For="() => server.Name" to specificy which variable the validator is checking
   - NavigationManager has to be inserted via dependency injection
   - Injection is performed via @inject
@@ -48,5 +48,5 @@ Notes Taken During Udemy Course:
   - When an application as able to partially render, we can consider that interactive
   - Enhanced Form Handling
       - To keep whole page from being refreshed when using <EditForm> we must enhance.
-      - Example: <EditForm Enhance="true">
+      - Example: < EditForm Enhance="true">
   
