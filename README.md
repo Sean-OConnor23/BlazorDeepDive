@@ -1,5 +1,5 @@
 Notes Taken During Udemy Course:
--Section 2: Blazor SSR (Static Site Rendering)
+Section 2: Blazor SSR (Static Site Rendering)
   - Start of program: Program.cs --> App.razor --> Routes.razor --> MainLayout.razor
   - Static Components (images, bootstrap, etc.) should be located under wwwroot folder
   - Static data repositories --> under Models folder
@@ -40,7 +40,7 @@ Notes Taken During Udemy Course:
       - Have to use @attribute [StreamRendering] at top of Routable Component file
       - Reference weather.razor in example code
       - The to be loaded aspect must not be static
-- Section 3: Server Interactivity
+Section 3: Server Interactivity
   - User --> DOM (document object model) --> JS (blazor.web.js) --> Web Server and then reverse back to user patching what needs to be updated on browser
   - Enhanced Navigation is enabled in Blazor Web App by default
       - via blazor.web.js
@@ -65,5 +65,10 @@ Notes Taken During Udemy Course:
           - recommended to place as an attribute when calling the component; if a page component we can only call inside the component
       - Can define interactivity at time of project creation along with the location (page/component or global)
   - MAKE SURE TO FOLLOW BLAZOR FOLDER STRUCTURE
-  - 
+  - Stateful applications have three main aspects (triangle):
+      - View --> triggers Event
+      - Event --> changes internal states variables
+      - States --> modifies the view
+  - Event Handling: Passing Data
+      - Temp
   
