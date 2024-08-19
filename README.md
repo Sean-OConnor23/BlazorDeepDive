@@ -49,4 +49,21 @@ Notes Taken During Udemy Course:
   - Enhanced Form Handling
       - To keep whole page from being refreshed when using <EditForm> we must enhance.
       - Example: < EditForm Enhance="true">
+  - Server Interactivity
+      - sets up a SIGNR channel (web socket channel)
+      - DOM has render tree; Memory (Back-end) also has render tree --> previous tree;
+          - When request is made, Memory updates its render tree --> new tree and compares to prev tree then sends patches to DOM render tree
+  - Enabling Server Interactivity
+      - it is enabled in Program.cs in two spots
+          - .AddInteractiveServerRenderMode()
+      - also has to be enabled at the component level
+          - using @rendermode = "InteractiveServer"
+      - Various interactivity locations (using @rendermode)
+          - Component interactivity location; set on component call, parent component, or inside component
+          - Global level: added on App.razor at < Routes @rendermode="InteractiveServer" />
+              - this one is not recommended by Microsoft
+          - recommended to place as an attribute when calling the component; if a page component we can only call inside the component
+      - Can define interactivity at time of project creation along with the location (page/component or global)
+  - MAKE SURE TO FOLLOW BLAZOR FOLDER STRUCTURE
+  - 
   
