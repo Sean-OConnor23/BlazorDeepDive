@@ -70,5 +70,23 @@ Section 3: Server Interactivity
       - Event --> changes internal states variables
       - States --> modifies the view
   - Event Handling: Passing Data
-      - Temp
+      - Onchange event
+          - creates ChangeEventArgs parameter
+  - Two way data binding
+      - Means view and state relationship is now two-ways
+      - Defined by @bind-value (notice it is lowercase "v" whereas in EditForm it was uppercase)
+      - blazor is basically handling the onchange event for us
+      - can specify event handler by @bindvalue:event
+          - Example --> @bind-value:event="oninput"
+  - Interactive EditForm
+      - FormName isn't required
+      - Do not need [SupplyParameterFromForm]
+  - @key to improve list-rendering performance
+      - allows us to generate items that make them unique
+      - two items cannot have the same key
+  - Virtualization to improve list-rendering performance
+      - replaces loops (such as foreach) and add < Virtualize Items="items to loop through" Context=""> what to loop </ Virtualize >
+      - reduces wait time for large lists
+      - renders items as they come onto the screen
+Section 4: Course Project (Part 1): To-Do List
   
