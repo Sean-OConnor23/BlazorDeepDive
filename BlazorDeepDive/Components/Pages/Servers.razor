@@ -11,7 +11,7 @@
         @foreach (var city in cities)
         {
             <div class="col">
-                <div class="card @(selectedCity.Equals(city, StringComparison.OrdinalIgnoreCase)?"border-primary":""))">
+                <div class="card @(selectedCity.Equals(city, StringComparison.OrdinalIgnoreCase)?"border-primary":"")">
                     <img src="@($"/images/{@city}.png")" class="card-img-top" alt="Displays an icon of @city">
                     <div class="card-body">
                         <button type="button" class="btn btn-primary" @onclick="@(() => {SelectCity(city);})">@city</button>
@@ -27,10 +27,10 @@
 </div>
 
 <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search Servers" @onchange="HandleServerFilterChange"/>
+    <input type="text" class="form-control" placeholder="Search Servers" @bind-value="serverFilter" @bind-value:event="oninput"/>
     <button class="btn btn-outline-secondary" type="button" id="button-search" @onclick="HandleSearch">Search</button>
 </div>
-
+@_serverFilter
 <div>
     <ul>
         @foreach (var server in servers)
@@ -56,7 +56,15 @@
 
     private string selectedCity = "Toronto";
 
-    private string serverFilter = "";
+    private string _serverFilter = "";
+
+    private string serverFilter{ get => _serverFilter; set
+        {
+            _serverFilter = value;
+
+            this.servers = ServersRepository.SearchServers(_serverFilter);
+        } 
+    }
 
     private void DeleteServer(int serverID)
     {
@@ -71,12 +79,7 @@
     {
         this.selectedCity = cityName;
 
-        this.servers = ServersRepository.GetServersByCity(cityName);
-    }
-
-    private void HandleServerFilterChange(ChangeEventArgs args)
-    {
-        serverFilter = args.Value?.ToString() ?? string.Empty;
+        this.servers = ServersRepository.GetServersByCity(this.selectedCity);
     }
 
     private void HandleSearch()
